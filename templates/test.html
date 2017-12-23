@@ -1,0 +1,287 @@
+{% for row in data %}
+       <div id="accordion" role="tablist" aria-multiselectable="true">
+ <div class="card">
+           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne{{row[0]}}" aria-expanded="false" aria-controls="collapseOne{{row[0]}}">
+   <div class="card-header" role="tab" id="headingOne">
+     <h5 class="mb-0">
+       <div class="panel-heading panel wow flipInX" data-wow-duration="1s" style="  background-color: #ffd791;  border-radius: 50px;    box-shadow: 8px 7px 14px -1px grey;">
+          <h3><i class="fa fa-user-circle" aria-hidden="true"></i> {{row[2]}} {{row[3]}} | <small class="wow fadeIn" data-wow-delay=".5s" >User ID: {{row[0]}} | <i class="fa fa-envelope wow fadeIn" data-wow-delay=".5s" aria-hidden="true"></i> <a href="mailto:{{row[4]}}?subject=Your IFA details For print and sign&body=Please find attached a copy of your data agreement please sign the page and return it to me." type="email"> {{row[4]}} |</a> <a type="button"  class="btn btn-info navbar-right btn-lg wow fadeIn" data-wow-delay="1s"style="margin-right:14px; margin-top:-10px; box-shadow: 8px 7px 14px -1px grey;" onclick="printDiv('printableArea{{row[0]}}')" value="print a div!" /><i class="fa fa-print" aria-hidden="true"></i></a></small> </h3>
+        </div>
+       </a>
+     </h5>
+   </div>
+   <div id="printableArea{{row[0]}}">
+<img class="only-print" style="display:none; " src="http://ylinspired.com/wp-content/uploads/sites/178/2015/07/Logo-Placeholder-300x106.png">
+     <h4 class="only-print no-print-info center" style='display:none;'>Hello {{row[2]}} {{row[3]}}, </h4>
+     <h4 class="only-print no-print-info" style='display:none;'>Thank you for filling in your details. We have displayed them below for you.</h4>
+     <h4 class="only-print no-print-info"  style='display:none;'>Please review, print, sign and return this document to your IFA</h4>
+     <h4 class="only-print no-print-info"  style='display:none; margin-bottom:700px;'>We will then endevour to generate your financial reports and advice as soon as possible.</h4>
+
+<div class="panel" style="box-shadow: 8px 7px 14px -1px grey; border-radius: 50px;" >
+   <div id="collapseOne{{row[0]}}" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+     <div class="card-block no-print">
+       <h4 class="only-print no-print-info"  style='display:none; margin-top:400px;'>Section1.
+<h4 class="text-center no-print-info "><b><i>Basic Details:</b></i></h4>
+ <table class="table table-responsive">
+ <thead>
+   <th class=" no-print">ID</th>
+   <th class=" no-print">Title</th>
+   <th class=" no-print">First Name</th>
+   <th class=" no-print">Surname</th>
+      <th class=" no-print">Email</th>
+ </thead>
+<tbody>
+
+ <!-- A List of tuples so row is each item in the list
+      and then the index is the column number.-->
+    <tr>
+      <td><input class="form-control col-xs-1"value="{{row[0]}}" disabled></td>
+      <td><input class="form-control col-xs-1"value="{{row[1]}}" disabled></td>
+      <td><input class="form-control col-xs-1"value="{{row[2]}}" disabled></td>
+      <td><input class="form-control col-xs-1"value="{{row[3]}}" disabled></td>
+      <td><input class="form-control col-xs-1"value="{{row[4]}}" disabled></td>
+
+    </tr>
+  </tbody>
+</table>
+  <table class="table table-responsive">
+    <thead>
+
+      <th class=" no-print">Initials</th>
+      <th class=" no-print">Prefers</th>
+      <th class=" no-print">Sex</th>
+      <th class=" no-print">Marital Status</th>
+      <th class=" no-print">Date of birth</th>
+    </thead>
+    <tbody>
+
+      <!-- A List of tuples so row is each item in the list
+           and then the index is the column number.-->
+         <tr>
+
+           <td><input class="form-control col-xs-1"value="{{row[9]}}" disabled></td>
+           <td><input class="form-control col-xs-1"value="{{row[10]}}" disabled></td>
+           <td><input class="form-control col-xs-1"value="{{row[11]}}" disabled></td>
+           <td><input class="form-control col-xs-1"value="{{row[12]}}" disabled></td>
+           <td><input class="form-control col-xs-1"value="{{row[13]}}" disabled></td>
+         </tr>
+       </tbody>
+     </table>
+       <table class="table table-responsive">
+    <thead>
+
+      <th class=" no-print">Maiden Name</th>
+      <th class=" no-print">Retire Age</th>
+      <th class=" no-print">Nationality</th>
+      <th class=" no-print">Domicile</th>
+    </thead>
+  <tbody>
+
+    <!-- A List of tuples so row is each item in the list
+         and then the index is the column number.-->
+       <tr>
+
+         <td><input class="form-control col-xs-1"value="{{row[14]}}" disabled></td>
+         <td><input class="form-control col-xs-1"value="{{row[15]}}" disabled></td>
+
+         <td><input class="form-control col-xs-1"value="{{row[18]}}" disabled></td>
+         <td><input class="form-control col-xs-1"value="{{row[19]}}" disabled></td>
+       </tr>
+
+</tbody>
+</table>
+<table>
+ <thead>
+<th class=" no-print">Relious Beliefs that may effect investment</th>
+
+</thead>
+<tbody>
+ <td>{{row[16]}}</td>
+</tbody>
+</table>
+<table>
+ <thead>
+<th class=" no-print">Changes expected in next 5 years</th>
+</thead>
+<tbody>
+ <td>{{row[17]}}</td>
+</tbody>
+</table>
+<br><br>
+<h4 class="only-print no-print-info"  style='display:none; margin-top:550px;'>Section2.
+<h4 class="text-center no-print-info"><b><i>Tax Details:</b></i></h4></h4>
+<table class="table table-responsive">
+ <thead>
+
+   <th class=" no-print">Uk Resident</th>
+   <th class=" no-print">Tax Payer</th>
+   <th class=" no-print">Lives Abroad</th>
+   <th class=" no-print">National Insurance</th>
+
+</thead>
+<tbody>
+<tr>
+
+ <td><input class="form-control col-xs-1"value="{{row[19]}}" disabled></td>
+ <td><input class="form-control col-xs-1"value="{{row[20]}}" disabled></td>
+ <td><input class="form-control col-xs-1"value="{{row[21]}}" disabled></td>
+ <td><input class="form-control col-xs-1"value="{{row[22]}}" disabled></td>
+
+</tr>
+</tbody>
+</table>
+<br><br>
+<h4 class="text-center no-print-info"><b><i>Employment Details:</b></i></h4>
+<table class="table table-responsive">
+ <thead>
+<th class=" no-print">Occupation</th>
+<th class=" no-print">Employment Status</th>
+<th class=" no-print">Self Employed?</th>
+<th class=" no-print">Employer</th>
+</thead>
+<tbody>
+<tr>
+<td><input class="form-control col-xs-1"value="{{row[23]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[24]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[25]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[26]}}" disabled></td>
+</tr>
+</tbody>
+</table>
+<table class="table table-responsive">
+ <thead>
+<th class=" no-print">Date Joined Company</th>
+<th class=" no-print">Ideal Retire Age</th>
+<th class=" no-print">Leaving workplace soon?</th>
+<th class=" no-print">Leaving date</th>
+
+</thead>
+<tbody>
+<tr>
+<td><input class="form-control col-xs-1"value="{{row[27]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[28]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[29]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[30]}}" disabled></td>
+
+
+</tr>
+</tbody>
+</table>
+<table class="table table-responsive">
+ <thead>
+<th class=" no-print">Likely Retire Age</th>
+<th class=" no-print">Reason for leaving</th>
+<th class=" no-print">If planning to return to work, when?</th>
+</thead>
+<tbody>
+<tr>
+
+<td><input class="form-control col-xs-1"value="{{row[31]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[32]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[32]}}" disabled></td
+
+</tr>
+</tbody>
+</table>
+<br><br>
+<h4 class="only-print no-print-info"  style='display:none; margin-top:400px;'>Section3.
+<h4 class="text-center no-print-info"><b><i>Education Details:</b></i></h4></h4>
+<table class="table table-responsive">
+ <thead>
+<th class=" no-print">GCSE</th>
+<th class=" no-print">A Level/ BTEC</th>
+<th class=" no-print">Other</th>
+</thead>
+<tbody>
+<tr>
+<td><input class="form-control col-xs-1"value="{{row[33]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[34]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[35]}}" disabled></td>
+</tr>
+</tbody>
+</table>
+<br><br>
+<h4 class="text-center no-print-info"><b><i>Health Details:</b></i></h4>
+<table class="table table-responsive">
+ <thead>
+<th class=" no-print">General Health</th>
+<th class=" no-print">Smoker?</th>
+<th class=" no-print">Cigarette per day</th>
+<th class=" no-print">Drinker?</th>
+
+</thead>
+<tbody>
+<tr>
+<td><input class="form-control col-xs-1"value="{{row[35]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[36]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[37]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[38]}}" disabled></td>
+</tr>
+</tbody>
+</table>
+<table class="table table-responsive">
+ <thead>
+<th class=" no-print">Drinking Units</th>
+<th class=" no-print">Height (feet, inches)</th>
+<th class=" no-print">Weight (stone, pounds)</th>
+<th class=" no-print">Weight (kg)</th>
+
+
+</thead>
+<tbody>
+<tr>
+
+<td><input class="form-control col-xs-1"value="{{row[39]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[40]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[41]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[42]}}" disabled></td>
+</tr>
+</tbody>
+</table>
+<table class="table table-responsive">
+ <thead>
+<th class=" no-print">hazard_pastime</th>
+<th class=" no-print">specifed_hazard</th>
+<th class=" no-print">Health issues</th>
+<th class=" no-print">Health details:</th>
+</thead>
+<tbody>
+<tr>
+<td><input class="form-control col-xs-1"value="{{row[43]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[44]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[45]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[46]}}" disabled></td>
+
+</tr>
+</tbody>
+</table>
+<br><br>
+<h4 class="text-center no-print-info"><b><i>Other Details:</b></i></h4>
+<table class="table table-responsive">
+ <thead>
+<th class=" no-print">Other 1</th>
+<th class=" no-print">Other 2</th>
+<th class=" no-print">Other 3</th>
+</thead>
+<tbody>
+<tr>
+
+<td><input class="form-control col-xs-1"value="{{row[47]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[48]}}" disabled></td>
+<td><input class="form-control col-xs-1"value="{{row[49]}}" disabled></td>
+</tr>
+
+<tr >
+ <td class="only-print no-print-info" style="margin-top:10px; display:none;"><h4 class="only-print no-print-info"  style='display:none; margin-top:1px;'>Sign Here</h4>Client signiture:______________</td>
+ <td class="only-print no-print-info" style="margin-top:10px; display:none;">IFA signiture:______________</td>
+<td style="margin-top:10px;">  </td>
+
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>
+</div>
+</div>
+ {% endfor %}
